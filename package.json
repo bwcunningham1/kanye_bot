@@ -1,14 +1,14 @@
 {
-  "name": "thatbrown_bot",
+  "name": "kanye_bot",
   "version": "0.0.0",
-  "description": "thatbrown_bot",
+  "description": "kanye_bot",
   "main": "HelloWorld.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pramodsum/thatbrown_bot.git"
+    "url": "https://github.com/pramodsum/kanye_bot.git"
   },
   "keywords": [
     "heroku",
@@ -19,9 +19,9 @@
   "author": "pramodsum",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pramodsum/thatbrown_bot/issues"
+    "url": "https://github.com/pramodsum/kanye_bot/issues"
   },
-  "homepage": "https://github.com/pramodsum/thatbrown_bot",
+  "homepage": "https://github.com/pramodsum/kanye_bot",
   "dependencies": {
     "logfmt": "~0.20.0",
     "express": "~3.4.8",

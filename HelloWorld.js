@@ -6,7 +6,7 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  res.send('BARNEY STINSON BOT');
+  res.send('Kanye West Bot');
 });
 
 var port = Number(process.env.PORT || 5000);
@@ -17,7 +17,7 @@ app.listen(port, function() {
 var GroupMe = require('./lib/groupme');
 var API = GroupMe.Stateless;
 
-var BOT_LISTENS_FOR = "Barney";
+var BOT_LISTENS_FOR = "Kanye";
 
 /************************************************************************
  * Read the access token from the command line.
@@ -30,14 +30,14 @@ var ACCESS_TOKEN = process.argv[2];
  ***********************************************************************/
 
 var USER_ID  = process.argv[3];
-var BOT_NAME = 'Barney Stinson';
+var BOT_NAME = 'Kanye West';
 // var BOT_NAME = 'TEST BOT';
 
 /************************************************************************
- * Bro Code
+ * Kanye Self-Confidence Compliments
  ***********************************************************************/
 
-var bro_code = [ 
+var kanye_fidence = [
     "Bros before hoes", 
     "A Bro will not talk about something lame in front of a woman",
     "Bros don't date their bro ex girlfriends",
@@ -182,39 +182,24 @@ incoming.on('message', function(msg) {
 
                 var message = "Nope. Nada. Zilch.";
 
-                // var url = 'http://freegeoip.net/json/' + ipAddr;
-                // var loc = null;
-                // var Request = unirest.get(url)
-                //   .end(function (response) {
-                //     loc = response.body;
-                // });
-
-                // Retrieve weather information from coordinates (Ann Arbor, MI)
-                forecast.get([42.2828, -83.7347], function(err, weather) {
+                // Retrieve weather information from coordinates (Box HQ)
+                forecast.get([37.402538, -122.116355], function(err, weather) {
                   if(err) console.dir(err);
                   else  {
                       var temp = weather.currently.temperature;
                       console.dir("Current temp: " + temp);
 
-                      if(temp > 60) {
-                        console.log("It's " + temp.toString() + " degrees outside! Time to bring out the sundresses!");
-                        message = "It's " + tempd.toString() + " degrees outside! Time to bring out the sundresses!";
+                      if(temp > 90) {
+                        console.log("It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT OUTSIDE!");
+                        message = "It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT OUTSIDE!";
                       }
-                      else if(temp > 40) {
-                        console.log("It's cool outside... Just like me.");
-                        message = "It's cool outside... Just like me.";
-                      }
-                      else if(temp > 20) {
-                        console.log("Brrrr it's cold! But baby don't worry... Daddy's home!");
-                        message = "Brrrr it's cold! But baby don't worry... Daddy's home!";
-                      }
-                      else if(temp > 0) {
-                        console.log("Suit up! It's freezing!");
-                        message = "Suit up! It's freezing!";
+                      else if(temp > 80) {
+                        console.log("The weather is fine, fine like Kanye.");
+                        message = "The weather is fine, fine like Kanye.";
                       }
                       else {
-                        console.log("It's " + temp.toString() + " degrees right now. So cold that it's going to be Legen...wait for it...DARY!");
-                        message = "It's " + temp.toString() + " degrees right now. So cold that it's going to be Legen...wait for it...DARY!";
+                        console.log("It's " + temp.toString() + " degrees right now. Damn that's colder than the reception I got after the VMA's");
+                        message = "It's " + temp.toString() + " degrees right now. Damn that's colder than the reception I got after the VMA's";
                       }
                     API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
@@ -231,11 +216,12 @@ incoming.on('message', function(msg) {
                   }
                 });
             }
+
             /************************************************************************
-             * Bro code
+             * Kanye-fidence Compliment Generator
              ***********************************************************************/
             else if(txt.search("bro code") != -1 || txt.search("Bro code") != -1) {
-              var message = bro_code[Math.floor(Math.random() * bro_code.length)];
+              var message = kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
               API.Bots.post(
               ACCESS_TOKEN, // Identify the access token
               bot_id, // Identify the bot that is sending the message
@@ -249,24 +235,7 @@ incoming.on('message', function(msg) {
                 }
               });
             }
-            // /************************************************************************
-            //  * Play Book
-            //  ***********************************************************************/
-            // else if(txt.search("HI") != -1 || txt.search("Hi") != -1 || txt.search("Hey") != -1 || txt.search("hi") != -1 || txt.search("hey") != -1 || txt.search("hello") != -1 || txt.search("HEY") != -1) {
-            //   var message = play_book[Math.floor(Math.random() * play_book.length)];
-            //   API.Bots.post(
-            //   ACCESS_TOKEN, // Identify the access token
-            //   bot_id, // Identify the bot that is sending the message
-            //   message, // Construct the message
-            //   {}, // No pictures related to this post
-            //   function(err,res) {
-            //     if (err) {
-            //         console.log("[API.Bots.post] Reply Message Error!");
-            //     } else {
-            //         console.log("[API.Bots.post] Reply Message Sent!");
-            //     }
-            //   });
-            // }
+
             /************************************************************************
              * Default BRODA responses
              ***********************************************************************/
