@@ -226,14 +226,13 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
-             * Default BRODA responses
+             * Default responses
              ***********************************************************************/
             else if(msg["data"]["subject"]["name"] != BOT_NAME && txt.search("Kanye") != -1) {
-                message = "HAAAAANH?!"
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
-                    response.body, // Construct the message
+                    "HAAAAANH?!", // Construct the message
                     {}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
