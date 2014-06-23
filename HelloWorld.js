@@ -122,13 +122,13 @@ incoming.on('message', function(msg) {
             //   ipAddr = req.connection.remoteAddress;
             // }
 
-            var url = 'http://freegeoip.net/json/' + ipAddr;
-            var loc = null;
-            var Request = unirest.get(url)
-              .end(function (response) {
-                loc = response.body;
-                console.dir(response);
-            });
+            // var url = 'http://freegeoip.net/json/' + ipAddr;
+            // var loc = null;
+            // var Request = unirest.get(url)
+            //   .end(function (response) {
+            //     loc = response.body;
+            //     console.dir(response);
+            // });
 
             /************************************************************************
              * Weather Responses
