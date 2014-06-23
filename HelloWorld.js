@@ -210,11 +210,11 @@ incoming.on('message', function(msg) {
              * Kanye-fidence Compliment Generator
              ***********************************************************************/
             else if(txt.search("test") != -1 || txt.search("Test") != -1) {
-                message = "Test complete.";
+                message = "HAAAAANH?!"
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
-                    message, // Construct the message
+                    response.body, // Construct the message
                     {}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
