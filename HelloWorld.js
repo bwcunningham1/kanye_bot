@@ -72,14 +72,12 @@ var retryCount = 3;
 // Constructs the IncomingStream, identified by the access token and 
 var incoming = new GroupMe.IncomingStream(ACCESS_TOKEN, USER_ID, null);
 
-/*
 // This logs the status of the IncomingStream
 incoming.on('status', function() {
     var args = Array.prototype.slice.call(arguments);
     var str = args.shift();
     console.log("[IncomingStream 'status']", str, args);
 });
-*/
 
 // This waits for the IncomingStream to complete its handshake and start listening.
 // We then get the bot id of a specific bot.
