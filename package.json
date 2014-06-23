@@ -29,7 +29,9 @@
     "request": "2.36.0",
     "q": "1.0.1",
     "mime": "1.2.11",
-    "websocket": "1.0.8"
+    "websocket": "1.0.8",
+    "groupme": "0.5.7",
+    "forecast": "0.1.2"
   },
   "engines": {
     "node": "0.8.x",
