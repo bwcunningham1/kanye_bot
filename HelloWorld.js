@@ -261,7 +261,7 @@ incoming.on('message', function(msg) {
               });
             }
             else if(msg["data"]["subject"]["name"] != BOT_NAME &&
-                (txt.search("Kanye") != -1 || && txt.search("kanye") != -1)) {
+                (txt.search("Kanye") != -1 || txt.search("kanye") != -1)) {
                 message = "HAAAAANH?!"
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
