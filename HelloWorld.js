@@ -1,7 +1,6 @@
 var express = require("express");
 var logfmt = require("logfmt");
 var unirest = require('unirest');
-var req = require("request")
 var app = express();
 
 app.use(logfmt.requestLogger());
@@ -115,13 +114,13 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * Get current location of user
              ***********************************************************************/
-            var ipAddr = req.headers["x-forwarded-for"];
-            if (ipAddr){
-              var list = ipAddr.split(",");
-              ipAddr = list[list.length-1];
-            } else {
-              ipAddr = req.connection.remoteAddress;
-            }
+            // var ipAddr = req.headers["x-forwarded-for"];
+            // if (ipAddr){
+            //   var list = ipAddr.split(",");
+            //   ipAddr = list[list.length-1];
+            // } else {
+            //   ipAddr = req.connection.remoteAddress;
+            // }
 
             var url = 'http://freegeoip.net/json/' + ipAddr;
             var loc = null;
