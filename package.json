@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/pramodsum/kanye_bot",
   "dependencies": {
+    "logfmt": "~0.20.0",
     "express": "~3.4.8",
     "unirest": "~0.1.1",
     "request": "^2.36.0"
@@ -30,6 +31,5 @@
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
-  },
-  "devDependencies": {}
+  }
 }
