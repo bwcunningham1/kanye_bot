@@ -112,6 +112,7 @@ incoming.on('message', function(msg) {
 
         if (bot_id && msg["data"]["subject"]["name"] != BOT_NAME) {
             var txt = msg["data"]["subject"]["text"].toLowerCase();
+            console.dir("TXT: " + txt);
 
             /************************************************************************
              * Get current location of user
