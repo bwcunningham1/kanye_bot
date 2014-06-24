@@ -112,7 +112,7 @@ incoming.on('message', function(msg) {
 
         if (bot_id && msg["data"]["subject"]["name"] != BOT_NAME) {
             var txt = msg["data"]["subject"]["text"].toLowerCase();
-            console.dir("[Incoming message from " + msg["data"]["subject"]["name"] + ": " + txt);
+            console.dir("[IncomingStream \'message\'] " + msg["data"]["subject"]["name"] + ": " + txt);
 
             /************************************************************************
              * Get current location of user
