@@ -38,27 +38,29 @@ var BOT_NAME = 'Kanye West';
  ***********************************************************************/
 
 var kanye_fidence = [
-    "Bros before hoes", 
-    "A Bro will not talk about something lame in front of a woman",
-    "Bros don't date their bro ex girlfriends",
-    "Bros buy porn for all the bros",
-    "A bro never sends a greeting card to another bro",
-    "Bros do not share dessert",
-    "Poorly-planned-mediocre-social-media-practical-jokes before honesty",
-    "A Bro shall always alert another Bro of any girl fight",
-    "Bros cannot make eye contact during a devil's threeway",
-    "A Bro will, whenever possible, provide a bro with protection",
-    "A bro saves a bro from his ex",
-    "A bro saves a bro from the friend zone",
-    "A Bro shall at all times say \"yes\"",
-    "The mom of a Bro is always off-limits. But the step-mom of a Bro is fair game if she initiates it and/or is wearing at least one article of leopards print clothing",
-    "A bro pretends to like cigars",
-    "A bro never dates a bro's ex-girlfriend (unless granted permission)",
-    "A bro that calls \"dibs\" first, has dibs",
-    "No leaving a Bro hanging",
-    "A Bro always likes the new profile picture of another bro",
-    "A true Bro will never be \"Necklace Guy\".",
-    "A bro shall not have a weird moment with another bro's fiance",
+    "Jay is Kweli's favorite rapper, 50 is Eminem's favorite rapper, and I'm my favorite rapper.", 
+    "I'm like a vessel, and god has chosen me to be the voice and the connector.", 
+    "My music isn't just music -- it's medicine.", 
+    "Don't ask me what I think the best song of last year was, because my opinion is the same as most of America's. It was \"Gold Digger\".",
+    "Everything I'm not made me everything I am. In my humble opinion, that's a prophetic statement. Gandhi would have said something like that.",
+    "Come on now! How could you be me and want to be someone else?",
+    "When I think of competition it's like I try to create against the past. I think about Michelangelo and Picasso. You know, the pyramids.",
+    "I am so credible and so influential and so relevant that I will change things.",
+    "I'm the no. 1 living and breathing rock star.",
+    "When someone comes up and says something like \"I am a god,\" everybody says \"Who does he think he is?\" I just told you who I thought I was. A god. I just told you. That's who I think I am.",
+    "For me to say I wasn't a genius, I would just be lying to you and to myself.",
+    "I feel like a little bit, like I'm the braveheart of creativity.",
+    "I'm a Warhol! I am the number one most impactful artist of our generation. I am Shakespeare in the flesh. Walt Disney, Nike, Google.",
+    "Visiting my mind is like visiting the Hermés factory.",
+    "I'm doing pretty good as far as geniuses go...I'm like a machine, I'm a robot.",
+    "I'm going down as a legend, whether or not you like me or not. Ia m the new Jim Morrison. I am the new Kurt Cobain.",
+    "The Bible had 20, 30, 40, 50 characters in it. You don't think that I would be one of the characters of today's modern Bible?",
+    "My greatest pain in life is that I will never be able to see myself perform live.",
+    "You can't look at a glass half full or empty if it's overflowing.",
+    "I have, like, nuclear power, like a superhero, like cyclops when he puts his glasses on.",
+    "Yeah. I'm rich and I'm famous, but I try not to be extra with it.",
+    "A lot of people were wondering what I was going to do if I didn't win anything. I guess we'll never know",
+    "I'm a creative genius and there's no other way to word it."
 ];
 
 /************************************************************************
@@ -188,26 +190,7 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
-             * Kanye-fidence Compliment Generator
-             ***********************************************************************/
-            else if(txt.search("bro code") != -1 || txt.search("Bro code") != -1) {
-              var message = kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
-              API.Bots.post(
-              ACCESS_TOKEN, // Identify the access token
-              bot_id, // Identify the bot that is sending the message
-              message, // Construct the message
-              {}, // No pictures related to this post
-              function(err,res) {
-                if (err) {
-                    console.log("[API.Bots.post] Reply Message Error!");
-                } else {
-                    console.log("[API.Bots.post] Reply Message Sent!");
-                }
-              });
-            }
-
-            /************************************************************************
-             * Kanye-fidence Compliment Generator
+             * Edison response
              ***********************************************************************/
             else if(txt.search("test") != -1 || txt.search("Test") != -1) {
                 message = "HAAAAANH?!"
@@ -226,21 +209,23 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
-             * Default responses
+             * Kanye-fidence Compliment Generator
              ***********************************************************************/
-            else if(msg["data"]["subject"]["name"] != BOT_NAME && txt.search("Kanye") != -1) {
-                API.Bots.post(
-                    ACCESS_TOKEN, // Identify the access token
-                    bot_id, // Identify the bot that is sending the message
-                    "HAAAAANH?!", // Construct the message
-                    {}, // No pictures related to this post
-                    function(err,res) {
-                        if (err) {
-                            console.log("[API.Bots.post] Reply Message Error!");
-                        } else {
-                            console.log("[API.Bots.post] Reply Message Sent!");
-                        }
-                    });
+            else if(msg["data"]["subject"]["name"] != BOT_NAME && 
+                    (txt.search("Kanye") != -1 || txt.search("kanye") != -1) {
+              var message = kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
+              API.Bots.post(
+              ACCESS_TOKEN, // Identify the access token
+              bot_id, // Identify the bot that is sending the message
+              message, // Construct the message
+              {}, // No pictures related to this post
+              function(err,res) {
+                if (err) {
+                    console.log("[API.Bots.post] Reply Message Error!");
+                } else {
+                    console.log("[API.Bots.post] Reply Message Sent!");
+                }
+              });
             }
         }
     }
