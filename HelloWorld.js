@@ -197,7 +197,7 @@ incoming.on('message', function(msg) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
-                    response.body, // Construct the message
+                    message, // Construct the message
                     {}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
