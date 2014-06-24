@@ -234,7 +234,7 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * Kanye Approves
              ***********************************************************************/
-            else if(txt.search("hey guys") != -1 || txt.search("?") != -1) {
+            else if(txt.search("hey guys") != -1 || txt.search("\?") != -1) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
