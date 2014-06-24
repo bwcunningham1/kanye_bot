@@ -109,10 +109,9 @@ incoming.on('message', function(msg) {
         && msg["data"]["subject"] 
         && msg["data"]["subject"]["text"]
         /*&& msg["data"]["subject"]["text"].indexOf(BOT_LISTENS_FOR) >= 0*/) {
-        txt = txt.toLowerCase();
 
         if (bot_id && msg["data"]["subject"]["name"] != BOT_NAME) {
-            var txt = msg["data"]["subject"]["text"];
+            var txt = msg["data"]["subject"]["text"].toLowerCase();
 
             /************************************************************************
              * Get current location of user
