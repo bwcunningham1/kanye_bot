@@ -109,6 +109,7 @@ incoming.on('message', function(msg) {
         && msg["data"]["subject"] 
         && msg["data"]["subject"]["text"]
         /*&& msg["data"]["subject"]["text"].indexOf(BOT_LISTENS_FOR) >= 0*/) {
+        txt = txt.toLowerCase();
 
         if (bot_id && msg["data"]["subject"]["name"] != BOT_NAME) {
             var txt = msg["data"]["subject"]["text"];
@@ -208,7 +209,15 @@ incoming.on('message', function(msg) {
                     });
             }
 
-            else if(txt.search("NOO") != -1 || txt.search("Damn") != -1 || txt.search("damn") != -1 || txt.search("shit") != -1 || txt.search("fuck") != -1 || txt.search("FUCK") != -1 ||txt.search("Fuck") != -1 ||txt.search("Shit") != -1 ||txt.search("SHIT") != -1 ||txt.search("Noo") != -1 || txt.search("Argh") != -1) {
+            /************************************************************************
+             * U MAD?!
+             ***********************************************************************/
+            else if(txt.search("NOO") != -1 || txt.search("Damn") != -1 || 
+                    txt.search("damn") != -1 || txt.search("shit") != -1 || 
+                    txt.search("fuck") != -1 || txt.search("FUCK") != -1 || 
+                    txt.search("Fuck") != -1 ||txt.search("Shit") != -1 || 
+                    txt.search("SHIT") != -1 ||txt.search("Noo") != -1 || 
+                    txt.search("Argh") != -1) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
@@ -224,23 +233,42 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
+             * Kanye Approves
+             ***********************************************************************/
+            else if(txt.search("hey guys") != -1 || txt.search("?") != -1) {
+                API.Bots.post(
+                    ACCESS_TOKEN, // Identify the access token
+                    bot_id, // Identify the bot that is sending the message
+                    "", // Construct the message
+                    {picture_url: "http://wac.450f.edgecastcdn.net/80450F/popcrush.com/files/2013/05/clapping.gif"}, // No pictures related to this post
+                    function(err,res) {
+                        if (err) {
+                            console.log("[API.Bots.post] Reply Message Error!");
+                        } else {
+                            console.log("[API.Bots.post] Reply Message Sent!");
+                        }
+                    });
+
+            }
+
+            /************************************************************************
              * Kanye-fidence Compliment Generator
              ***********************************************************************/
             else if(msg["data"]["subject"]["name"] != BOT_NAME && 
                     (txt.search("Kanye") != -1 || txt.search("kanye") != -1)) {
               var message = "Kanye always says that " + kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
               API.Bots.post(
-              ACCESS_TOKEN, // Identify the access token
-              bot_id, // Identify the bot that is sending the message
-              message, // Construct the message
-              {}, // No pictures related to this post
-              function(err,res) {
-                if (err) {
-                    console.log("[API.Bots.post] Reply Message Error!");
-                } else {
-                    console.log("[API.Bots.post] Reply Message Sent!");
-                }
-              });
+                ACCESS_TOKEN, // Identify the access token
+                bot_id, // Identify the bot that is sending the message
+                message, // Construct the message
+                {}, // No pictures related to this post
+                function(err,res) {
+                  if (err) {
+                      console.log("[API.Bots.post] Reply Message Error!");
+                  } else {
+                      console.log("[API.Bots.post] Reply Message Sent!");
+                  }
+                });
             }
         }
     }
