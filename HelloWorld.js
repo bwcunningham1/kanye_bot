@@ -50,7 +50,7 @@ var kanye_fidence = [
     "When someone comes up and says something like \"I am a god,\" everybody says \"Who does he think he is?\" I just told you who I thought I was. A god. I just told you. That's who I think I am.",
     "For me to say I wasn't a genius, I would just be lying to you and to myself.",
     "I feel like a little bit, like I'm the braveheart of creativity.",
-    "I'm a Warhol! I am the number one most impactful artist of our generation. I am Shakespeare in the flesh. Walt Disney, Nike, Google.",
+    "I am Warhol! I am the number one most impactful artist of our generation. I am Shakespeare in the flesh. Walt Disney, Nike, Google.",
     "Visiting my mind is like visiting the Hermés factory.",
     "I'm doing pretty good as far as geniuses go...I'm like a machine, I'm a robot.",
     "I'm going down as a legend, whether or not you like me or not. Ia m the new Jim Morrison. I am the new Kurt Cobain.",
