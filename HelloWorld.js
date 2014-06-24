@@ -251,7 +251,7 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * BOOTY
              ***********************************************************************/
-            else if(txt.search("booty") != -1 || msg["data"]["subject"]["name"] == "Booty") {
+            else if(txt.search("booty") != -1) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
