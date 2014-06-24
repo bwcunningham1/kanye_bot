@@ -193,7 +193,7 @@ incoming.on('message', function(msg) {
              * Edison response
              ***********************************************************************/
             else if(txt.search("test") != -1 || txt.search("Test") != -1) {
-                message = "HAAAAANH?!"
+                message = "HAAAAANH?! http://s3.amazonaws.com/rapgenius/tumblr_me2bakjLPb1qlsrn9o1_500.gif"
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
