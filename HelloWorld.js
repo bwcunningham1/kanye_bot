@@ -212,7 +212,7 @@ incoming.on('message', function(msg) {
              * Kanye-fidence Compliment Generator
              ***********************************************************************/
             else if(msg["data"]["subject"]["name"] != BOT_NAME && 
-                    (txt.search("Kanye") != -1 || txt.search("kanye") != -1) {
+                    (txt.search("Kanye") != -1 || txt.search("kanye") != -1)) {
               var message = kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
               API.Bots.post(
               ACCESS_TOKEN, // Identify the access token
