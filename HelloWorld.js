@@ -162,8 +162,8 @@ incoming.on('message', function(msg) {
                       console.dir("Current temp: " + temp);
 
                       if(temp > 90) {
-                        console.log("It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT OUTSIDE!");
-                        message = "It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT OUTSIDE!";
+                        console.log("It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT!");
+                        message = "It's " + temp.toString() + " degrees outside! DAMNN IT'S HOT!";
                       }
                       else if(temp > 80) {
                         console.log("The weather is fine, fine like Kanye.");
@@ -199,6 +199,21 @@ incoming.on('message', function(msg) {
                     bot_id, // Identify the bot that is sending the message
                     message, // Construct the message
                     {picture_url: "http://s3.amazonaws.com/rapgenius/tumblr_me2bakjLPb1qlsrn9o1_500.gif"}, // No pictures related to this post
+                    function(err,res) {
+                        if (err) {
+                            console.log("[API.Bots.post] Reply Message Error!");
+                        } else {
+                            console.log("[API.Bots.post] Reply Message Sent!");
+                        }
+                    });
+            }
+
+            else if(txt.search("NOO") != -1 || txt.search("Damn") != -1 || txt.search("damn") != -1 || txt.search("shit") != -1 || txt.search("fuck") != -1 || txt.search("FUCK") != -1 ||txt.search("Fuck") != -1 ||txt.search("Shit") != -1 ||txt.search("SHIT") != -1 ||txt.search("Noo") != -1 || txt.search("Argh") != -1) {
+                API.Bots.post(
+                    ACCESS_TOKEN, // Identify the access token
+                    bot_id, // Identify the bot that is sending the message
+                    "", // Construct the message
+                    {picture_url: "http://i.imgur.com/if0XH.jpg"}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
                             console.log("[API.Bots.post] Reply Message Error!");
