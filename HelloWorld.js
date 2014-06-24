@@ -136,7 +136,7 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * Weather Responses
              ***********************************************************************/
-            if(txt.search("weather") != -1 || txt.search("Weather") != -1) {
+            if(txt.search("weather") != -1) {
 
                 // Require the module
                 var Forecast = require('forecast');
@@ -191,9 +191,9 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
-             * Edison response
+             * Test response
              ***********************************************************************/
-            else if(txt.search("test") != -1 || txt.search("Test") != -1) {
+            else if(txt.search("test") != -1) {
                 message = "HAAAAANH?!";
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
@@ -212,11 +212,8 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * U MAD?!
              ***********************************************************************/
-            else if(txt.search("NOO") != -1 || txt.search("Damn") != -1 || 
-                    txt.search("damn") != -1 || txt.search("shit") != -1 || 
-                    txt.search("fuck") != -1 || txt.search("FUCK") != -1 || 
-                    txt.search("Fuck") != -1 ||txt.search("Shit") != -1 || 
-                    txt.search("SHIT") != -1 ||txt.search("Noo") != -1 || 
+            else if(txt.search("noo") != -1 || txt.search("damn") != -1 ||
+                    txt.search("shit") != -1 || txt.search("fuck") != -1 ||
                     txt.search("Argh") != -1) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
@@ -273,8 +270,7 @@ incoming.on('message', function(msg) {
             /************************************************************************
              * Kanye-fidence Compliment Generator
              ***********************************************************************/
-            else if(msg["data"]["subject"]["name"] != BOT_NAME && 
-                    (txt.search("Kanye") != -1 || txt.search("kanye") != -1)) {
+            else if(msg["data"]["subject"]["name"] != BOT_NAME && txt.search("kanye") != -1) {
               var message = kanye_fidence[Math.floor(Math.random() * kanye_fidence.length)];
               API.Bots.post(
                 ACCESS_TOKEN, // Identify the access token
