@@ -193,12 +193,12 @@ incoming.on('message', function(msg) {
              * Edison response
              ***********************************************************************/
             else if(txt.search("test") != -1 || txt.search("Test") != -1) {
-                message = "HAAAAANH?! http://s3.amazonaws.com/rapgenius/tumblr_me2bakjLPb1qlsrn9o1_500.gif";
+                message = "HAAAAANH?!";
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
                     message, // Construct the message
-                    {}, // No pictures related to this post
+                    {picture_url: "http://s3.amazonaws.com/rapgenius/tumblr_me2bakjLPb1qlsrn9o1_500.gif"}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
                             console.log("[API.Bots.post] Reply Message Error!");
