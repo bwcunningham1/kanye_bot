@@ -251,6 +251,25 @@ incoming.on('message', function(msg) {
             }
 
             /************************************************************************
+             * BOOTY
+             ***********************************************************************/
+            else if(txt.search("booty") != -1) {
+                API.Bots.post(
+                    ACCESS_TOKEN, // Identify the access token
+                    bot_id, // Identify the bot that is sending the message
+                    "BOOTY", // Construct the message
+                    {}, // No pictures related to this post
+                    function(err,res) {
+                        if (err) {
+                            console.log("[API.Bots.post] Reply Message Error!");
+                        } else {
+                            console.log("[API.Bots.post] Reply Message Sent!");
+                        }
+                    });
+
+            }
+
+            /************************************************************************
              * Kanye-fidence Compliment Generator
              ***********************************************************************/
             else if(msg["data"]["subject"]["name"] != BOT_NAME && 
