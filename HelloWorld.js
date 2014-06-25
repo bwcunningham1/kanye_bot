@@ -1,4 +1,21 @@
-var express = require("express");
+/************************************************************************
+
+Kanye Bot Triggers: 
+-----------------------
+  "kanye": 
+      Prints random kanye self-compliment
+  "test": 
+       Prints "HAAAANH?!" with gif
+  Most kinds of angry responses:
+       Sends "You MAD?" gif
+  "weather"
+      Prints weather @ Box HQ
+  "hey guys":
+      Sends Kanye approves gif
+
+ ***********************************************************************/
+
+ var express = require("express");
 var logfmt = require("logfmt");
 var unirest = require('unirest');
 var app = express();
