@@ -145,7 +145,7 @@ incoming.on('message', function(msg) {
 //                    getRequest(ACCESS_TOKEN, "/groups/" + 8599920 + "/messages", {opts:opts, doParse:true}, callback);
 //                }
 //            });
-            API.getRequest(ACCESS_TOKEN, "/groups/" + 8599920 + "/messages", {opts:opts, doParse:true}, function(err, response) {
+            API.getRequest(ACCESS_TOKEN, "/groups/" + 8599920 + "/messages", {}, function(err, response) {
                 if(err) console.dir(err);
                 else {
                     console.dir(response);
