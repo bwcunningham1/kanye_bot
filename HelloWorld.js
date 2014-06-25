@@ -10,6 +10,8 @@ Kanye Bot Triggers:
        Sends "You MAD?" gif
   "weather"
       Prints weather @ Box HQ
+  "booty"
+      Prints booty
   "hey guys":
       Sends Kanye approves gif
 
