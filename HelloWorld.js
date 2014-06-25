@@ -134,6 +134,18 @@ incoming.on('message', function(msg) {
             console.dir("[IncomingStream 'message'] " + msg["data"]["subject"]["name"] + ": " + txt);
 
             /************************************************************************
+             * Imma let you finish
+             ***********************************************************************/
+
+            //Check if last 2 messages were posted by the same person
+            API.Messages.index(ACCESS_TOKEN, 8599920, function(err, response) {
+                if(err) console.dir(err);
+                else {
+                    console.dir(response);
+                }
+            });
+
+            /************************************************************************
              * Get current location of user
              ***********************************************************************/
             // var ipAddr = req.headers["x-forwarded-for"];
