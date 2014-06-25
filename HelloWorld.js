@@ -138,14 +138,7 @@ incoming.on('message', function(msg) {
              ***********************************************************************/
 
             //Check if last 2 messages were posted by the same person
-//            API.Messages.index(ACCESS_TOKEN, 8599920, function(err, response) {
-//                if(err) console.dir(err);
-//                else {
-//                    console.dir(response);
-//                    getRequest(ACCESS_TOKEN, "/groups/" + 8599920 + "/messages", {opts:opts, doParse:true}, callback);
-//                }
-//            });
-            API.getRequest(ACCESS_TOKEN, "/groups/" + 8599920 + "/messages", {}, function(err, response) {
+            API.Messages.index(ACCESS_TOKEN, 8599920, {}, function(err, response) {
                 if(err) console.dir(err);
                 else {
                     console.dir(response);
