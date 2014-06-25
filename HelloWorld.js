@@ -112,7 +112,7 @@ incoming.on('message', function(msg) {
 
         if (bot_id && msg["data"]["subject"]["name"] != BOT_NAME) {
             var txt = msg["data"]["subject"]["text"].toLowerCase();
-            console.dir("[IncomingStream \'message\'] " + msg["data"]["subject"]["name"] + ": " + txt);
+            console.dir("[IncomingStream 'message'] " + msg["data"]["subject"]["name"] + ": " + txt);
 
             /************************************************************************
              * Get current location of user
@@ -194,11 +194,10 @@ incoming.on('message', function(msg) {
              * Test response
              ***********************************************************************/
             else if(txt.search("test") != -1) {
-                message = "HAAAAANH?!";
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
-                    message, // Construct the message
+                    "", // Construct the message
                     {picture_url: "http://s3.amazonaws.com/rapgenius/tumblr_me2bakjLPb1qlsrn9o1_500.gif"}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
@@ -265,6 +264,14 @@ incoming.on('message', function(msg) {
                         }
                     });
 
+            }
+
+            else if(msg["data"]["subject"]["name"] == "Booty") {
+                console.dir("BOOTY!BOOTY!BOOTY!BOOTY!BOOTY!BOOTY!");
+            }
+
+            else if(msg["data"]["subject"]["name"] == "Yeezus") {
+                console.dir("YEEZUS!YEEZUS!YEEZUS!YEEZUS!YEEZUS!YEEZUS!");
             }
 
             /************************************************************************
