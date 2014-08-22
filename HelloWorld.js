@@ -141,7 +141,8 @@ incoming.on('message', function(msg) {
             API.Messages.index(ACCESS_TOKEN, 8599920, {}, function(err, response) {
                 if(err) console.dir(err);
                 else {
-                    console.dir(response);
+//                    console.log(response);
+//                    if(response)
                 }
             });
 
