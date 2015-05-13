@@ -12,6 +12,8 @@ Kanye Bot Triggers:
       Prints weather @ Box HQ
   "booty"
       Prints booty
+  Alcohol related messages: 
+      Sends drinkning gif
   "hey guys":
       Sends Kanye approves gif
 
@@ -245,7 +247,7 @@ incoming.on('message', function(msg) {
              ***********************************************************************/
             else if(txt.search("noo") != -1 || txt.search("damn") != -1 ||
                     txt.search("shit") != -1 || txt.search("fuck") != -1 ||
-                    txt.search("Argh") != -1) {
+                    txt.search("argh") != -1) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
@@ -286,8 +288,29 @@ incoming.on('message', function(msg) {
                 API.Bots.post(
                     ACCESS_TOKEN, // Identify the access token
                     bot_id, // Identify the bot that is sending the message
-                    "BOOTY", // Construct the message
+                    "BOOTY BOOTY BOOTY", // Construct the message
                     {}, // No pictures related to this post
+                    function(err,res) {
+                        if (err) {
+                            console.log("[API.Bots.post] Reply Message Error!");
+                        } else {
+                            console.log("[API.Bots.post] Reply Message Sent!");
+                        }
+                    });
+
+            }
+
+            /************************************************************************
+             * Dranks
+             ***********************************************************************/
+            else if(txt.search("drinks") != -1 || txt.search("alcohol") != -1 || 
+                    txt.search("beer") != -1 || txt.search("beers") != -1 || 
+                    txt.search("wine") != -1) {
+                API.Bots.post(
+                    ACCESS_TOKEN, // Identify the access token
+                    bot_id, // Identify the bot that is sending the message
+                    "", // Construct the message
+                    {picture_url: "http://cdn.clotureclub.com/wp-content/uploads/2014/08/tumblr_inline_mt1vvhgmwe1qz4rgp.gif?8c4c3a"}, // No pictures related to this post
                     function(err,res) {
                         if (err) {
                             console.log("[API.Bots.post] Reply Message Error!");
