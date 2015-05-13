@@ -19,7 +19,9 @@ Kanye Bot Triggers:
 
  ***********************************************************************/
 
- var express = require("express");
+require('newrelic');
+
+var express = require("express");
 var logfmt = require("logfmt");
 var unirest = require('unirest');
 var app = express();
