@@ -90,7 +90,7 @@ var kanye_fidence = [
  * Set up the message-based IncomingStream and the HTTP push
  ***********************************************************************/
 
-var bot_id = 0c624effaaedfb0a753c0ee730;
+var bot_id = null;
 
 var retryCount = 3;
 
